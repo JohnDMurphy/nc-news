@@ -35,6 +35,15 @@ body::-webkit-scrollbar-thumb {
   color: rgb(36, 4, 36);
 }
 
+@media only screen and (min-width: 1800px) {
+  .App {
+    width: 65%;
+  }
+  .single-article {
+    width: 100%;
+  }
+}
+
 .article-footer {
   width: 100%;
   display: flex;
