@@ -10,7 +10,6 @@ export const Home = () => {
     });
   }, []);
 
-  console.log(articles);
   return (
     <div className='login-page'>
       <ul className='article-list'>
@@ -26,8 +25,12 @@ export const Home = () => {
                   {data.author}
                 </small>
               </p>
-              <p>👍{data.votes}</p>
-              <i>View {data.comment_count} Comments </i>
+              <span className='article-footer'>
+                <i className='view-comment-button'>
+                  View {data.comment_count} Comments{' '}
+                </i>
+                <p className='like-button'>👍{data.votes}</p>
+              </span>
             </li>
           );
         })}
