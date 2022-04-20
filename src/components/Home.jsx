@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { getNewsArticles } from '../utils/api';
 import { Article } from './Article';
 
 export const Home = () => {
   const [articles, setArticles] = useState([]);
 
+  const { holder } = useParams();
+
   useEffect(() => {
-    getNewsArticles().then((articlesFromApi) => {
+    getNewsArticles(holder).then((articlesFromApi) => {
       setArticles(articlesFromApi);
     });
-  }, []);
+  }, [holder]);
 
   return (
     <>
