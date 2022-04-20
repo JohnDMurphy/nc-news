@@ -1,3 +1,17 @@
 .App {
-  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  align-items: center;
+  margin: auto;
+  padding: 2em 0;
+  line-height: 1.2rem;
+  letter-spacing: 0.02rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
