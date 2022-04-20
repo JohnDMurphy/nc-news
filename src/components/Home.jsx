@@ -1,37 +1,24 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { getNewsArticles } from '../utils/api';
+import { Article } from './Article';
 
 export const Home = () => {
   const [articles, setArticles] = useState([]);
 
+  const { holder } = useParams();
+
   useEffect(() => {
-    getNewsArticles().then((articlesFromApi) => {
+    getNewsArticles(holder).then((articlesFromApi) => {
       setArticles(articlesFromApi);
     });
-  }, []);
+  }, [holder]);
 
-  console.log(articles);
   return (
-    <div className='login-page'>
+    <>
       <ul className='article-list'>
-        {articles.map((data) => {
-          // Refactor to single reusable component
-          return (
-            <li key={data.article_id} className='single-article'>
-              <h3>{data.title}</h3>
-              <p>{data.body}</p>
-              <p className='author-text'>
-                <small>
-                  By <br />
-                  {data.author}
-                </small>
-              </p>
-              <p>👍{data.votes}</p>
-              <i>View {data.comment_count} Comments </i>
-            </li>
-          );
-        })}
+        <Article data={articles} />
       </ul>
-    </div>
+    </>
   );
 };
