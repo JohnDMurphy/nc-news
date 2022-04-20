@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { getNewsArticles } from '../utils/api';
-// import { Link } from 'react-router-dom';
 
 export const Home = () => {
   const [articles, setArticles] = useState([]);
@@ -16,6 +15,7 @@ export const Home = () => {
     <div className='login-page'>
       <ul className='article-list'>
         {articles.map((data) => {
+          // Refactor to single reusable component
           return (
             <li key={data.article_id}>
               <h3>{data.title}</h3>
