@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getNewsArticles } from '../utils/api';
+import { Article } from './Article';
 
 export const Home = () => {
   const [articles, setArticles] = useState([]);
@@ -11,30 +12,10 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className='login-page'>
+    <>
       <ul className='article-list'>
-        {articles.map((data) => {
-          // Refactor to single reusable component
-          return (
-            <li key={data.article_id} className='single-article'>
-              <h3>{data.title}</h3>
-              <p>{data.body}</p>
-              <p className='author-text'>
-                <small>
-                  By <br />
-                  {data.author}
-                </small>
-              </p>
-              <span className='article-footer'>
-                <i className='view-comment-button'>
-                  View {data.comment_count} Comments{' '}
-                </i>
-                <p className='like-button'>👍{data.votes}</p>
-              </span>
-            </li>
-          );
-        })}
+        <Article data={articles} />
       </ul>
-    </div>
+    </>
   );
 };

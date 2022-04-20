@@ -2,6 +2,10 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { Home } from './components/Home';
 import { Nav } from './components/Nav';
+import { Coding } from './components/Coding';
+import { Football } from './components/Football';
+import { Cooking } from './components/Cooking';
+// import { useState } from 'react';
 
 function App() {
   return (
@@ -17,6 +21,9 @@ function App() {
       </div>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/Coding' element={<Coding />} />
+        <Route path='/Football' element={<Football />} />
+        <Route path='/Cooking' element={<Cooking />} />
       </Routes>
     </div>
   );
