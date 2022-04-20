@@ -12,6 +12,35 @@
 
 h1 {
   font-size: 3rem;
+}
+
+h1,
+h3 {
+  text-align: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
+}
+
+.author-text {
+  text-align: center;
+}
+
+.single-article {
+  border: solid 1px black;
+  border-radius: 15px;
+  background-color: rgb(237, 237, 243);
+  padding: 15px;
+  margin: 25px auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 0;
 }
