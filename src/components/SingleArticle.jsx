@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getArticleById, updateVotes } from '../utils/api';
+import { getArticleById, updateVotes, downVotes } from '../utils/api';
 
 export const SingleArticle = () => {
   const [article, setArticle] = useState({});
@@ -13,6 +13,11 @@ export const SingleArticle = () => {
         return ++curVote;
       });
       updateVotes(article_id);
+    } else {
+      setUpVote((curVote) => {
+        return --curVote;
+      });
+      downVotes(article_id);
     }
   }
 
