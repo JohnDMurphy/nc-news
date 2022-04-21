@@ -23,3 +23,15 @@ export const getArticleById = (param) => {
     return data.article;
   });
 };
+
+export const updateVotes = (param) => {
+  let query = `/articles/${param}`;
+
+  return newsApi.patch(query, { inc_votes: 1 });
+};
+
+export const downVotes = (param) => {
+  let query = `/articles/${param}`;
+
+  return newsApi.patch(query, { inc_votes: -1 });
+};
