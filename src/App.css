@@ -85,6 +85,10 @@ h3 {
   text-align: center;
 }
 
+.back-btn {
+  color: rgb(36, 4, 36);
+}
+
 .single-article {
   border: solid 1px rgb(218, 70, 12);
   border-radius: 15px;

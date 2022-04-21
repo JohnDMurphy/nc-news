@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getNewsArticles } from '../utils/api';
+
 import { Article } from './Article';
 
 export const Home = () => {
