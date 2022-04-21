@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getArticleById, updateVotes, downVotes } from '../utils/api';
+import { Comments } from './Comments';
 
 export const SingleArticle = () => {
   const [article, setArticle] = useState({});
@@ -43,8 +44,11 @@ export const SingleArticle = () => {
           <h6 className='article-header back-btn'>Home Page</h6>
         </Link>
         <span className='article-footer'>
-          <i className='view-comment-button'>View {article.comment_count}</i>
-
+          <Link to={`/articles/${article_id}/comments`} element={<Comments />}>
+            <i className='view-comment-button'>
+              View {article.comment_count} Comments
+            </i>
+          </Link>
           <p className='like-button' onClick={upDoot}>
             👍 {article.votes + upVote}
           </p>
