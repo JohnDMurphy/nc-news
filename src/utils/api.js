@@ -15,3 +15,11 @@ export const getNewsArticles = (holder) => {
     return data.articles;
   });
 };
+
+export const getArticleById = (param) => {
+  let query = `/articles/${param}`;
+
+  return newsApi.get(query).then(({ data }) => {
+    return data.article;
+  });
+};

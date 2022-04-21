@@ -1,10 +1,18 @@
+import { Link } from 'react-router-dom';
+
 export const Article = ({ data }) => {
   return (
     <>
       {data.map((articleData) => {
         return (
-          <li key={articleData.article_id} className='single-article'>
-            <h3 className='article-header'>{articleData.title}</h3>
+          <li
+            id={articleData.article_id}
+            key={articleData.article_id}
+            className='single-article'
+          >
+            <Link to={`/articles/${articleData.article_id}`}>
+              <h3 className='article-header'>{articleData.title}</h3>
+            </Link>
             <p>{articleData.body}</p>
             <p className='author-text'>
               <small>
