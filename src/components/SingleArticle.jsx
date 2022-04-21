@@ -1,10 +1,20 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getArticleById } from '../utils/api';
+import { getArticleById, updateVotes } from '../utils/api';
 
 export const SingleArticle = () => {
   const [article, setArticle] = useState({});
+  const [upVote, setUpVote] = useState(0);
   const { article_id } = useParams();
+
+  function upDoot() {
+    if (upVote < 1) {
+      setUpVote((curVote) => {
+        return ++curVote;
+      });
+      updateVotes(article_id);
+    }
+  }
 
   useEffect(() => {
     getArticleById(article_id).then((articleData) => {
@@ -30,7 +40,9 @@ export const SingleArticle = () => {
         <span className='article-footer'>
           <i className='view-comment-button'>View {article.comment_count}</i>
 
-          <p className='like-button'>👍 {article.votes}</p>
+          <p className='like-button' onClick={upDoot}>
+            👍 {article.votes + upVote}
+          </p>
         </span>
       </div>
     </>
