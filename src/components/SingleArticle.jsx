@@ -15,9 +15,8 @@ export const SingleArticle = () => {
   return (
     <>
       <div className='single-article'>
-        <Link to={`/`}>
-          <h3 className='article-header'>{article.title}</h3>
-        </Link>
+        <h3 className='article-header'>{article.title}</h3>
+
         <p>{article.body}</p>
         <p className='author-text'>
           <small>
@@ -26,7 +25,7 @@ export const SingleArticle = () => {
           </small>
         </p>
         <Link to={`/`}>
-          <h6 className='article-header back-btn'>Go Back</h6>
+          <h6 className='article-header back-btn'>Home Page</h6>
         </Link>
         <span className='article-footer'>
           <i className='view-comment-button'>View {article.comment_count}</i>
