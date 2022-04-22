@@ -35,3 +35,11 @@ export const downVotes = (param) => {
 
   return newsApi.patch(query, { inc_votes: -1 });
 };
+
+export const getComments = (param) => {
+  let query = `/articles/${param}/comments`;
+
+  return newsApi.get(query).then(({ data }) => {
+    return data.comments;
+  });
+};

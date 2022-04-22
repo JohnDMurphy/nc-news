@@ -22,7 +22,7 @@ export const Article = ({ data }) => {
             </p>
             <span className='article-footer'>
               <i className='view-comment-button'>
-                View {articleData.comment_count} Comments{' '}
+                {articleData.comment_count} Comments{' '}
               </i>
 
               <p className='like-button'>👍 {articleData.votes}</p>
