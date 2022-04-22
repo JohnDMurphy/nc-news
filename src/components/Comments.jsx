@@ -61,7 +61,7 @@ export const Comments = () => {
         ></textarea>
         <button id='post-btn'>Post</button>
       </form>
-      <small id='submit-message'></small>
+      <small id='fail-message'></small>
       <ul className='article-list'>
         {newComment?.map((comment) => {
           return (
