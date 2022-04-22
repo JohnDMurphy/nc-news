@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 export const Article = ({ data }) => {
   return (
@@ -22,7 +23,7 @@ export const Article = ({ data }) => {
             </p>
             <span className='article-footer'>
               <i className='view-comment-button'>
-                {articleData.comment_count} Comments{' '}
+                {moment(articleData.created_at).format('DD-MM-YYYY')}
               </i>
 
               <p className='like-button'>👍 {articleData.votes}</p>

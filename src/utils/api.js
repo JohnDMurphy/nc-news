@@ -43,3 +43,11 @@ export const getComments = (param) => {
     return data.comments;
   });
 };
+
+export const postComment = (param, infoObj) => {
+  let query = `/articles/${param}/comments`;
+
+  return newsApi.post(query, infoObj).then(({ data }) => {
+    return data.comment;
+  });
+};
