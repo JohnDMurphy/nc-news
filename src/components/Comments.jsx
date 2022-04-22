@@ -1,5 +1,5 @@
 import { getComments } from '../utils/api';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import moment from 'moment';
 
@@ -16,6 +16,9 @@ export const Comments = () => {
   return (
     <>
       <h2>Comments</h2>
+      <Link to={`/articles/${article_id}`}>
+        <h5 className='back-btn'>Back to Article</h5>
+      </Link>
       <ul className='article-list'>
         {comments.map((comment) => {
           return (
